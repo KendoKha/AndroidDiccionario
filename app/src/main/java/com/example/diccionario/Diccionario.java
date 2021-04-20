@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Diccionario {
 
-    private ArrayList<Palabra> palabras = new ArrayList<Palabra>();
+    private static ArrayList<Palabra> palabras = new ArrayList<Palabra>();
 
 
 
-    public void addPalabra(Palabra p){
+    public static void addPalabra(Palabra p){
         palabras.add(p);
     }
 
-    public ArrayList<Palabra> getDiccionario(){
-        return this.palabras;
+    public static ArrayList<Palabra> getDiccionario(){
+        return palabras;
     }
 
 
