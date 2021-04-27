@@ -2,6 +2,9 @@ package com.example.diccionario;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -29,15 +32,38 @@ public class Introduccion extends AppCompatActivity {
                 if(palabraEsp.getText().toString() != "" && palabraIng.getText().toString() != ""){
                     if(rdPalabra.isChecked() || rdExpresion.isChecked()) {
 
-                        Diccionario.addPalabra(new Palabra(palabraEsp.getText().toString(), palabraIng.getText().toString()));
-                        palabraEsp.setText("");
-                        palabraIng.setText("");
-                    }else{
+                        if(rdPalabra.isChecked()){
+                            Diccionario.addPalabra(new Palabra(palabraEsp.getText().toString(), palabraIng.getText().toString(), Tipos.Palabra));
+                            palabraEsp.setText("");
+                            palabraIng.setText("");
+                            Dialog dPalabra = createAlertDialog("Nueva palabra añadida");
+                            dPalabra.show();
+
+                        }else{
+                            Diccionario.addPalabra(new Palabra(palabraEsp.getText().toString(), palabraIng.getText().toString(), Tipos.Expresion));
+                            palabraEsp.setText("");
+                            palabraIng.setText("");
+                            Dialog dExpresion = createAlertDialog("Nueva expresión añadida");
+                            dExpresion.show();
+                        }
 
                     }
             }}
+
         });
 
+    }
 
+    private Dialog createAlertDialog(String s){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setTitle("Introducción realizada");
+        builder.setMessage(s);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener(){
+            public void onClick(DialogInterface dialog, int which){
+                dialog.cancel();
+            }
+        });
+        return builder.create();
     }
 }

@@ -14,7 +14,7 @@ public class Palabra {
 
 
 
-    public Palabra(String palabraEspagnol, String palabraIngles){
+    public Palabra(String palabraEspagnol, String palabraIngles, Tipos tipo){
 
         this.tipo = tipo;
         this.palabraEspagnol = palabraEspagnol;
