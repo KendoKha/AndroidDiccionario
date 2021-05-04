@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button btnIntro = (Button) findViewById(R.id.btn1);
+        Button btnConsulta = (Button) findViewById(R.id.btnConsultas);
+
         btnIntro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -26,6 +28,17 @@ public class MainActivity extends AppCompatActivity {
 
                     MainActivity.this.startActivity(intentIntro);
 
+                }
+            }
+        });
+
+        btnConsulta.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if(v==btnConsulta){
+                    Intent intentConsulta = new Intent(MainActivity.this, Consulta.class);
+
+                    MainActivity.this.startActivity(intentConsulta);
                 }
             }
         });

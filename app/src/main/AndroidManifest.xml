@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Diccionario">
-        <activity android:name=".Introduccion"></activity>
+        <activity
+            android:name=".Consulta"
+            android:label="@string/title_activity_consulta"
+            android:theme="@style/Theme.Diccionario.NoActionBar">
+
+
+        </activity>
+        <activity android:name=".Introduccion" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

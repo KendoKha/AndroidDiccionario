@@ -22,4 +22,22 @@ public class Palabra {
         this.aciertos = 0;
         this.fechaIntroduccion = LocalDateTime.now();
     }
+
+    public String dimePalabraEsp(){
+        return this.palabraEspagnol;
+    }
+
+    public String dimePalabraIng(){
+        return this.palabraIngles;
+    }
+
+    public int getAciertos(){
+        return this.aciertos;
+    }
+
+    @Override
+    public String toString() {
+        return "palabraEspagnol='" + palabraEspagnol + '\'' +
+                ", palabraIngles='" + palabraIngles + '\'';
+    }
 }
