@@ -36,7 +36,12 @@ public class Consulta extends AppCompatActivity {
         RadioButton rdBtnOrdenPalabras = (RadioButton) findViewById(R.id.rdBtnOrdenPalabra);
         RadioButton rdBtnOrdenExpresion = (RadioButton) findViewById(R.id.rdBtnOrdenExpresion);
 
+        btnOrdenar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
 
 
 

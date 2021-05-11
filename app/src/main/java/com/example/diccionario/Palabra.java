@@ -1,6 +1,7 @@
 package com.example.diccionario;
 
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.Date;
 
 public class Palabra {
@@ -11,6 +12,13 @@ public class Palabra {
     private int aciertos;
     private LocalDateTime fechaIntroduccion;
     private Date ultimoTestRealizado;
+
+    public static Comparator<Palabra> palabraComparator = new Comparator<Palabra>() {
+        @Override
+        public int compare(Palabra o1, Palabra o2) {
+            return 0;
+        }
+    };
 
 
 
@@ -40,4 +48,7 @@ public class Palabra {
         return "palabraEspagnol='" + palabraEspagnol + '\'' +
                 ", palabraIngles='" + palabraIngles + '\'';
     }
+
+
+
 }
